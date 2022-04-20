@@ -40,11 +40,11 @@ public class Base_class
 	@BeforeMethod
 	public void login_to_application() throws InterruptedException
 	{
-		driver.get("http://localhost/login.do");
+		driver.get("https://gateway-qa.tangentia.com/login");
 		 System.out.println("log in successfully");
-	     driver.findElement(By.xpath("//input[@id='username']")).sendKeys("admin");
+	     driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Hans");
 	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("//input[@name='pwd']")).sendKeys("manager");
+	     driver.findElement(By.xpath("//input[@name='pass']")).sendKeys("Hans@1");
 	     Thread.sleep(1000);
 	     driver.findElement(By.xpath("//a[@id='loginButton']")).click();
 	     Thread.sleep(1000);
