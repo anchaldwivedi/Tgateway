@@ -12,7 +12,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
-import genric_libraries.Webdriver_utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base_class 
@@ -69,5 +68,3 @@ public class Base_class
 		}
 	}
 
-
-}
