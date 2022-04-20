@@ -31,7 +31,7 @@ public class Base_class
 	public void launching_the_browser()
 	{
 		WebDriverManager.chromedriver().setup();
-		 driver=new ChromeDriver();
+		driver = new ChromeDriver();
 		Webdriver_utilities wlib=new Webdriver_utilities();
 		wlib.maxmaisewindow(driver);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
