@@ -46,25 +46,26 @@ public class Base_class
 	     Thread.sleep(1000);
 	     driver.findElement(By.xpath("//input[@name='pass']")).sendKeys("Hans@1");
 	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("//a[@id='loginButton']")).click();
+	     //driver.findElement(By.xpath("//a[@id='loginButton']")).click();
+	     driver.findElement(By.xpath("//button[.=' Login ']")).click();
 	     Thread.sleep(1000);
 	     }
-	@AfterMethod
-	public void logout_application()
-	{
-		driver.findElement(By.xpath("//a[.='Logout']")).click();
-		System.out.println("logout application successfull");
-		}
-	@AfterClass
-	public void close_the_browser()
-	{  driver.quit();
-		System.out.println("close the browser");
-		
-	}
-	@AfterSuite
-	public void close_the_database()
-	{ 
-		System.out.println("database close successfully");
-		}
-	}
+//	@AfterMethod
+//	public void logout_application()
+//	{
+//		driver.findElement(By.xpath("//a[.='Logout']")).click();
+//		System.out.println("logout application successfull");
+//		}
+//	@AfterClass
+//	public void close_the_browser()
+//	{  driver.quit();
+//		System.out.println("close the browser");
+//		
+//	}
+//	@AfterSuite
+//	public void close_the_database()
+//	{ 
+//		System.out.println("database close successfully");
+//		}
+//	}
 
