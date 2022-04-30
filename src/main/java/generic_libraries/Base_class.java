@@ -1,5 +1,6 @@
 package generic_libraries;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -16,6 +17,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base_class 
 { 
+	public Propertyfile_utility plib=new Propertyfile_utility();
 	public WebDriver driver;
   public Webdriver_utilities wlb=new Webdriver_utilities();
 
@@ -38,13 +40,13 @@ public class Base_class
 		
 	}
 	@BeforeMethod
-	public void login_to_application() throws InterruptedException
+	public void login_to_application() throws InterruptedException, Throwable
 	{
-		driver.get("https://gateway-qa.tangentia.com/login");
+		driver.get(plib.readdatafromproprtyfile("url"));
 		 System.out.println("log in successfully");
-	     driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Hans");
+	     driver.findElement(By.xpath("//input[@name='username']")).sendKeys(plib.readdatafromproprtyfile("username"));
 	     Thread.sleep(1000);
-	     driver.findElement(By.xpath("//input[@name='pass']")).sendKeys("Hans@1");
+	     driver.findElement(By.xpath("//input[@name='pass']")).sendKeys(plib.readdatafromproprtyfile("password"));
 	     Thread.sleep(1000);
 	     //driver.findElement(By.xpath("//a[@id='loginButton']")).click();
 	     driver.findElement(By.xpath("//button[.=' Login ']")).click();
