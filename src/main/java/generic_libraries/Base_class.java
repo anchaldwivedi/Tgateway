@@ -1,11 +1,10 @@
 package generic_libraries;
 
-import java.io.IOException;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -59,7 +58,7 @@ public class Base_class
 		 driver.findElement(By.xpath("//div[.=' HansVan Ende']")).click();
 		 Thread.sleep(2000);
 		driver.findElement(By.xpath("//app-header/div[1]/div[1]/div[3]/div[3]/div[2]/div[2]/a[1]")).click();
-		System.out.println("logout application successfull");
+		System.out.println("logout application successfully");
 		}
 	@AfterClass
 	public void close_the_browser()
