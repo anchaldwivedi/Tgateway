@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -52,22 +53,24 @@ public class Base_class
 	     driver.findElement(By.xpath("//button[.=' Login ']")).click();
 	     Thread.sleep(1000);
 	     }
-//	@AfterMethod
-//	public void logout_application()
-//	{
-//		driver.findElement(By.xpath("//a[.='Logout']")).click();
-//		System.out.println("logout application successfull");
-//		}
-//	@AfterClass
-//	public void close_the_browser()
-//	{  driver.quit();
-//		System.out.println("close the browser");
-//		
-//	}
-//	@AfterSuite
-//	public void close_the_database()
-//	{ 
-//		System.out.println("database close successfully");
-//		}
+	@AfterMethod
+	public void logout_application() throws InterruptedException
+	{
+		 driver.findElement(By.xpath("//div[.=' HansVan Ende']")).click();
+		 Thread.sleep(2000);
+		driver.findElement(By.xpath("//app-header/div[1]/div[1]/div[3]/div[3]/div[2]/div[2]/a[1]")).click();
+		System.out.println("logout application successfull");
+		}
+	@AfterClass
+	public void close_the_browser()
+	{  driver.quit();
+		System.out.println("close the browser");
+		
+	}
+	@AfterSuite
+	public void close_the_database()
+	{ 
+		System.out.println("database close successfully");
+		}
 	}
 

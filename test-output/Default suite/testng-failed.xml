@@ -3,14 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="Testcases.Testcase1">
+      <class name="Testcases.Testcase5">
         <methods>
+          <include name="close_the_browser"/>
           <include name="test1"/>
           <include name="launching_the_browser"/>
+          <include name="logout_application"/>
           <include name="login_to_application"/>
           <include name="connect_database"/>
+          <include name="close_the_database"/>
         </methods>
-      </class> <!-- Testcases.Testcase1 -->
+      </class> <!-- Testcases.Testcase5 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
