@@ -55,7 +55,7 @@ public class Base_class
 	@AfterMethod
 	public void logout_application() throws InterruptedException
 	{
-		 driver.findElement(By.xpath("//div[.=' HansVan Ende']")).click();
+		 driver.findElement(By.xpath("//div[@class='ui pointing dropdown accountMenu']")).click();
 		 Thread.sleep(2000);
 		driver.findElement(By.xpath("//app-header/div[1]/div[1]/div[3]/div[3]/div[2]/div[2]/a[1]")).click();
 		System.out.println("logout application successfully");
