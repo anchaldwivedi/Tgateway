@@ -3,6 +3,7 @@ package generic_libraries;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -94,6 +95,34 @@ public class Webdriver_utilities
 						break;
 					}
 				}
+			}
+		 /**
+			 * This method will select a date in a Calendar
+			 * @param driver
+			 * @param year
+			 * @param Month
+			 * @param day
+			 */
+			public void pickDateFromCalender(WebDriver driver, String year, String Month ,int day)
+			{
+				driver.findElement(By.xpath("//button[@class='current']")).click();
+				driver.findElement(By.xpath("//table[@class='years']//span[.='"+year+"']")).click();
+				driver.findElement(By.xpath("//table[@class='months']//span[.='"+Month+"']")).click();
+				WebElement ele1 = driver.findElement(By.xpath("//table[@class='days weeks']//span[.='"+day+"']"));
+				ele1.click();
+				try {
+					if (ele1.isDisplayed()) 
+					{
+						driver.findElement(By.xpath("(//table[@class='days weeks']//span[.='"+day+"'])[2]")).click();
+					}
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+			}
+			
+			public void getSystemDownloadPath()
+			{
+				
 			}
 		 
 		 }
